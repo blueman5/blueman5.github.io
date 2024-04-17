@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpJosModder Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">The Flash [LC]</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <button type="button" class="btn btn-primary btn-lg mb-3" onclick="window.open('https://cdn.discordapp.com/attachments/1204958261401358348/1229950584564748358/TheFlash.zip?ex=66318bbe&is=661f16be&hm=4f0ac6eb7eccfa6a7a64686ec5b9634d76878caaf70cd283732f2dace9703bb7&', '_blank')">Download File</button>
+                <p class="lead">Download it by pressing this button (We did this website because the mod was banned at thunderstore)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    <script>
+async function startDownload(url) {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'Flash.zip';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  } catch (error) {
+    console.error(error);
+    alert("An error occurred while downloading the file.");
+  }
+}
+    </script>
+</body>
+</html>
