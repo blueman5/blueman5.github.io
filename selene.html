@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soon Embed</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://media.discordapp.net/attachments/1279439033268830261/1312803951497838704/44b274d3f0ddb2d934ef42476a42eceb.png?ex=674dd374&is=674c81f4&hm=e9ca9106cdc8765cca80afb9c5245cca07ea4bbbd5f36faf5f534bf82e43e418&=&format=webp&quality=lossless&width=468&height=468');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="text-center">
+        <h1 class="text-8xl font-bold text-transparent bg-clip-text" 
+            style="animation: pulse 2s infinite, shimmer 3s linear infinite; 
+                   background-size: 2000px 100%; 
+                   background-position: -1000px 0;
+                   background-image: linear-gradient(to right, #8a4fff, #6a5acd, #483d8b);">
+            Soon
+        </h1>
+        <p class="mt-4 text-xl" style="color: #9370db; opacity: 0.85;">Something exciting is coming...</p>
+    </div>
+</body>
+</html>
