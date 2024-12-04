@@ -3,44 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>https://discord.gg/gWqJSCqzQJ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css">
+    <title>Soon Embed</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://media.discordapp.net/attachments/1312804690785730590/1314001436148895805/1lTiMzV.webp?ex=67522eb3&is=6750dd33&hm=0fafa370f76614859aef20fbb4bbcd4a90a03c02020e9360ee21255dfef7d219&=&format=webp');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
 </head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-5">ESS [Solara]</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <button type="button" class="btn btn-primary btn-lg mb-3" onclick="window.open('https://cdn.discordapp.com/attachments/1171377465952829532/1247595268988211251/Jfehir9.exe?ex=66609923&is=665f47a3&hm=49827f4c2be22c1eb532de34d376bba54f0590b202051d6a0dc94ca15459b47d&', '_blank')">Instalar</button>
-                <p class="lead">Para utilizar o Solara, siga estas etapas:
-
-Coloque o arquivo do Solara (.exe) em uma pasta de sua escolha.
-Abra o executável a partir dessa pasta.
-Recomenda-se injetar o Solara diretamente no aplicativo do Roblox (menu) Você também pode injetar no jogo, mas a outra opção é mais estável.</p>
-            </div>
-        </div>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="text-center">
+        <h1 class="text-8xl font-bold text-transparent bg-clip-text" 
+            style="animation: pulse 2s infinite, shimmer 3s linear infinite; 
+                   background-size: 2000px 100%; 
+                   background-position: -1000px 0;
+                   background-image: linear-gradient(to right, #8a4fff, #6a5acd, #483d8b);">
+            Soon
+        </h1>
+        <p class="mt-4 text-xl" style="color: #9370db; opacity: 0.85;">Something exciting is coming...</p>
     </div>
-</body>
-</html>
-    <script>
-async function startDownload(url) {
-  try {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'SolaraESS.zip';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-  } catch (error) {
-    console.error(error);
-    alert("An error occurred while downloading the file.");
-  }
-}
-    </script>
 </body>
 </html>
