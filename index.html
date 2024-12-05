@@ -1,133 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Selene</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-		<style>
-			body {
-				font-family: 'Inter', sans-serif;
-				margin: 0;
-				padding: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-height: 100vh;
-				background-color: #f0f0f0;
-			}
 
-			.root {
-				max-width: 800px;
-				text-align: center;
-				padding: 2rem;
-			}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="root">
+            <div class="content">
 
-			.content {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 2rem;
-			}
+                <header>
+                    <h1>Selene</h1>
+                    <h2>A fully featured executor. No BS.</h2>
+                </header>
 
-			header h1 {
-				font-size: 3rem;
-				margin-bottom: 0.5rem;
-				color: #333;
-			}
+                <div class="three-dim-image">
+                    <img src="assets/image.webp"></div>
+                </div>
 
-			header h2 {
-				font-size: 1.25rem;
-				color: #666;
-				margin-top: 0;
-			}
+                <a class="discordlink" href="https://discord.gg/getselene" style="text-decoration: none;">
+                    <h2 class="discordlink">Find out yourself</h2>
+                </a>
 
-			.three-dim-image {
-				perspective: 1000px;
-				width: 100%;
-				max-width: 600px;
-			}
+            </div>
+        </div>
+        <footer style="display: inline-block;">
+            <p>&copy; 2024 Selene</p>
+                <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const imageContainer = document.querySelector('.three-dim-image');
+                const image = imageContainer.querySelector('img');
+                
+                imageContainer.addEventListener('mousemove', (e) => {
+                    const rect = imageContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const mouseX = e.clientX - centerX;
+                    const mouseY = e.clientY - centerY;
+                    
+                    const rotateX = -mouseY / 20;
+                    const rotateY = mouseX / 20;
+                    
+                    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                });
+                
+                imageContainer.addEventListener('mouseleave', () => {
+                    image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            });
+        </script>
+        </footer>
+    </body>
 
-			.three-dim-image img {
-				width: 100%;
-				height: auto;
-				border-radius: 12px;
-				transition: transform 0.3s ease;
-				box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-			}
-
-			.discordlink {
-				display: inline-block;
-				background-color: #5865F2;
-				color: white;
-				padding: 10px 20px;
-				border-radius: 8px;
-				text-decoration: none;
-				transition: background-color 0.3s ease;
-			}
-
-			.discordlink:hover {
-				background-color: #4752C4;
-			}
-
-			footer {
-				position: fixed;
-				bottom: 0;
-				width: 100%;
-				text-align: center;
-				padding: 10px;
-				background-color: #f4f4f4;
-				color: #666;
-			}
-		</style>
-	</head>
-	
-	<body>
-		<div class="root">
-			<div class="content">
-				<header>
-					<h1>Selene</h1>
-					<h2>A fully featured executor. No BS.</h2>
-				</header>
-
-				<div class="three-dim-image">
-					<img src="assets/image.webp" alt="Selene Screenshot">
-				</div>
-
-				<a class="discordlink" href="https://discord.gg/getselene">
-					Find out yourself
-				</a>
-			</div>
-		</div>
-		<footer>
-			<p>&copy; 2024 Selene</p>
-		</footer>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const imageContainer = document.querySelector('.three-dim-image');
-				const image = imageContainer.querySelector('img');
-
-				imageContainer.addEventListener('mousemove', (e) => {
-					const rect = imageContainer.getBoundingClientRect();
-					const centerX = rect.left + rect.width / 2;
-					const centerY = rect.top + rect.height / 2;
-
-					const mouseX = e.clientX - centerX;
-					const mouseY = e.clientY - centerY;
-
-					const rotateX = -mouseY / 20;
-					const rotateY = mouseX / 20;
-
-					image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-				});
-
-				imageContainer.addEventListener('mouseleave', () => {
-					image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-				});
-			});
-		</script>
-	</body>
 </html>
