@@ -15,16 +15,6 @@
             will-change: transform; 
         }
     </style>
-    <style>
-    .three-dim-image img {
-        transition: transform 0.3s ease-out, box-shadow 0.5s ease-in-out; 
-        will-change: transform, box-shadow; 
-    }
-
-    .three-dim-image img.glow {
-        box-shadow: 0 0 20px 15px rgba(102, 0, 153, 0.75);
-    }
-</style>
 </head>
 
 <body>
@@ -46,33 +36,29 @@
     </div>
     <footer style="display: inline-block;">
         <p>&copy; 2024 Selene</p>
-       <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const imageContainer = document.querySelector('.three-dim-image');
-        const image = imageContainer.querySelector('img');
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const imageContainer = document.querySelector('.three-dim-image');
+                const image = imageContainer.querySelector('img');
+                
+                imageContainer.addEventListener('mousemove', (e) => {
+                    const rect = imageContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const mouseX = e.clientX - centerX;
+                    const mouseY = e.clientY - centerY;
 
-        imageContainer.addEventListener('mousemove', (e) => {
-            const rect = imageContainer.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const mouseX = e.clientX - centerX;
-            const mouseY = e.clientY - centerY;
+                    const rotateX = -mouseY / 20;
+                    const rotateY = mouseX / 20;
 
-            const rotateX = -mouseY / 20;
-            const rotateY = mouseX / 20;
+                    image.style.transform = rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05);
+                });
 
-            image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-            image.classList.add('glow'); 
-        });
-
-        imageContainer.addEventListener('mouseleave', () => {
-            image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-            setTimeout(() => {
-                image.classList.remove('glow'); 
-            }, 100); 
-        });
-    });
-</script>
+                imageContainer.addEventListener('mouseleave', () => {
+                    image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            });
+        </script>
     </footer>
 </body>
 
