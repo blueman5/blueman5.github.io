@@ -15,6 +15,18 @@
     }
 }
 
+<style>
+    .discordlink {
+        font-size: 20px; 
+        transition: font-size 0.3s ease;
+    }
+
+    .discordlink:hover {
+        font-size: 24px;
+    }
+</style>
+
+
 
 h1:nth-child(1) {
 	font-size: 6.5em;
