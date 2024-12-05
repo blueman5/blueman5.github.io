@@ -1,5 +1,21 @@
 /* style.css */
 
+
+
+/* Animated Background Gradient */
+@keyframes animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 h1:nth-child(1) {
 	font-size: 6.5em;
 	text-align: center;
@@ -53,18 +69,9 @@ body {
 }
 
 .root {
-    flex: 1;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-repeat: no-repeat;
-	min-height: max-content;
-
     --colors-top: repeating-linear-gradient(
         90deg,
-		#7a2c69 0%,
+        #7a2c69 0%,
         #4b2c7a 20%,
         #430a69 40%,
         #342c7a 60%,
@@ -73,8 +80,9 @@ body {
     );
 
     background-image: var(--colors-top);
-    background-size: 100% 100%;
+    background-size: 400% 400%;
     background-position: 0 0;
+    animation: animation 15s ease infinite;
     padding: 1rem 0;
 }
 
