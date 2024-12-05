@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Selene</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/webp" href="assets/seleneico.webp">
     <style>
         .three-dim-image img {
             transition: transform 0.3s ease-out; 
@@ -45,7 +46,7 @@
                     const mouseY = e.clientY - centerY;
                     const rotateX = -mouseY / 20;
                     const rotateY = mouseX / 20;
-                image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
                 });
                 imageContainer.addEventListener('mouseleave', () => {
                     image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
