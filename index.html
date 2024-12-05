@@ -45,7 +45,7 @@
                     const mouseY = e.clientY - centerY;
                     const rotateX = -mouseY / 20;
                     const rotateY = mouseX / 20;
-                  image.style.transform = rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05);
+                image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
                 });
                 imageContainer.addEventListener('mouseleave', () => {
                     image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
