@@ -15,16 +15,14 @@
     }
 }
 
-<style>
-    .discordlink {
-        font-size: 20px; 
-        transition: font-size 0.3s ease;
-    }
+.discordlink {
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+    display: inline-block;
+}
 
-    .discordlink:hover {
-        font-size: 24px;
-    }
-</style>
+.discordlink:hover {
+    transform: scale(1.2);
+}
 
 
 
