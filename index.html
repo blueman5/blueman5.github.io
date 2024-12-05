@@ -36,7 +36,7 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const imageContainer = document.querySelector('.three-dim-image');
                 const image = imageContainer.querySelector('img');
-                
+
                 imageContainer.addEventListener('mousemove', (e) => {
                     const rect = imageContainer.getBoundingClientRect();
                     const centerX = rect.left + rect.width / 2;
@@ -45,36 +45,10 @@
                     const mouseY = e.clientY - centerY;
                     const rotateX = -mouseY / 20;
                     const rotateY = mouseX / 20;
-                  image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                  image.style.transform = rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05);
                 });
                 imageContainer.addEventListener('mouseleave', () => {
                     image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const discordLink = document.querySelector('.discordlink');
-                const originalText = discordLink.textContent;
-                let typewriterInterval;
-
-                discordLink.addEventListener('mouseenter', () => {
-                    discordLink.textContent = '';
-                    const newText = 'press that button bro';
-                    let charIndex = 0;
-
-                    typewriterInterval = setInterval(() => {
-                        if (charIndex < newText.length) {
-                            discordLink.textContent += newText.charAt(charIndex);
-                            charIndex++;
-                        } else {
-                            clearInterval(typewriterInterval);
-                        }
-                    }, 50);
-                });
-
-                discordLink.addEventListener('mouseleave', () => {
-                    clearInterval(typewriterInterval);
-                    discordLink.textContent = originalText;
                 });
             });
         </script>
