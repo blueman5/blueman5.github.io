@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="root">
         <div class="content">
@@ -24,11 +22,9 @@
                 <h1>Selene</h1>
                 <h2>A fully featured executor. No BS.</h2>
             </header>
-
             <div class="three-dim-image">
                 <img src="assets/image.webp" alt="3D Image">
             </div>
-
             <a class="discordlink" href="https://discord.gg/getselene" style="text-decoration: none;">
                 <h2 class="discordlink">Find out yourself</h2>
             </a>
@@ -47,19 +43,41 @@
                     const centerY = rect.top + rect.height / 2;
                     const mouseX = e.clientX - centerX;
                     const mouseY = e.clientY - centerY;
-
                     const rotateX = -mouseY / 20;
                     const rotateY = mouseX / 20;
-
                   image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
                 });
-
                 imageContainer.addEventListener('mouseleave', () => {
                     image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const discordLink = document.querySelector('.discordlink');
+                const originalText = discordLink.textContent;
+                let typewriterInterval;
+
+                discordLink.addEventListener('mouseenter', () => {
+                    discordLink.textContent = '';
+                    const newText = 'press that button bro';
+                    let charIndex = 0;
+
+                    typewriterInterval = setInterval(() => {
+                        if (charIndex < newText.length) {
+                            discordLink.textContent += newText.charAt(charIndex);
+                            charIndex++;
+                        } else {
+                            clearInterval(typewriterInterval);
+                        }
+                    }, 50);
+                });
+
+                discordLink.addEventListener('mouseleave', () => {
+                    clearInterval(typewriterInterval);
+                    discordLink.textContent = originalText;
                 });
             });
         </script>
     </footer>
 </body>
-
 </html>
